@@ -1,0 +1,199 @@
+/* ----- RESET GENERAL ----- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #fff;
+}
+
+/* ----- HEADER ----- */
+header {
+  width: 100%;
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+header .logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #750a2e;
+}
+
+/* Botón hamburguesa (oculto en desktop) */
+.menu-toggle {
+  display: none;
+  font-size: 2em;
+  cursor: pointer;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #111827;
+    flex-direction: column;
+    width: 200px;
+    text-align: right;
+    padding: 15px;
+    display: none;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* ----- SOBRE MÍ ----- */
+.about {
+  padding: 140px 10% 100px;
+  background: linear-gradient(135deg, #4d0101, #4d0101);
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+
+.about-img {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-img img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid #131416;
+  box-shadow: 0 6px 18px #13141640;
+  transition: transform 0.4s ease;
+}
+
+.about-img img:hover {
+  transform: scale(1.05);
+}
+
+.about-content {
+  flex: 2;
+  min-width: 300px;
+}
+
+.about-content h2 {
+  font-size: 2.3em;
+  margin-bottom: 15px;
+  color: #f7e9ed;
+}
+
+.about-content p {
+  margin-bottom: 25px;
+  font-size: 1.05em;
+  color: #ffffff;
+}
+
+/* Tarjetas de estadísticas */
+.stats {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: 150px;
+  padding: 25px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 15px;
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.2em;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* ----- FOOTER ----- */
+.footer {
+  background: #111827;
+  color: #ccc;
+  text-align: center;
+  padding: 25px 10px;
+}
+
+.footer .social-icons {
+  margin-bottom: 12px;
+}
+
+.footer .social-icons a {
+  margin: 0 8px;
+  color: #ccc;
+  font-size: 1.4em;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.footer .social-icons a:hover {
+  color: #750a2e;
+  transform: scale(1.1);
+}
+
+/* ----- ANIMACIONES ----- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
