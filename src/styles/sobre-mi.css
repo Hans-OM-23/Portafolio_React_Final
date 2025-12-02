@@ -66,23 +66,112 @@ header .logo {
   font-size: 2em;
   cursor: pointer;
   color: var(--color-text-primary);
+  transition: transform 0.3s ease, color 0.3s ease;
+  z-index: 1001;
+}
+
+.menu-toggle:hover {
+  color: var(--color-accent);
+  transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
   .nav-links {
     position: absolute;
-    top: 60px;
-    right: 0;
-    background: var(--color-bg-primary);
+    top: 70px;
+    right: 10px;
+    background: linear-gradient(135deg, rgba(42, 5, 5, 0.98), rgba(78, 42, 42, 0.95));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
-    width: 200px;
+    width: 220px;
     text-align: right;
-    padding: 15px;
+    padding: 20px;
     display: none;
+    border-radius: 15px;
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7),
+      0 0 20px rgba(212, 175, 55, 0.2),
+      inset 0 0 30px rgba(212, 175, 55, 0.05);
+    gap: 8px;
   }
 
   .nav-links.show {
     display: flex;
+    animation: slideInRight 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px) scale(0.9);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+  }
+
+  .nav-links li {
+    opacity: 0;
+    animation: fadeInStagger 0.3s ease forwards;
+    margin: 0;
+    padding: 12px 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+  }
+
+  .nav-links.show li:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  .nav-links.show li:nth-child(2) {
+    animation-delay: 0.15s;
+  }
+
+  .nav-links.show li:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+
+  .nav-links.show li:nth-child(4) {
+    animation-delay: 0.25s;
+  }
+
+  .nav-links.show li:nth-child(5) {
+    animation-delay: 0.3s;
+  }
+
+  @keyframes fadeInStagger {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .nav-links li:hover {
+    background: rgba(212, 175, 55, 0.1);
+    border-color: rgba(212, 175, 55, 0.4);
+    transform: translateX(-5px);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+  }
+
+  .nav-links li a {
+    display: block;
+    font-size: 1.05em;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .nav-links li a.active {
+    color: var(--color-accent);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
   }
 
   .menu-toggle {
@@ -126,8 +215,8 @@ header .logo {
   border-radius: 50%;
   border: 5px solid var(--color-accent);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6),
-              0 0 0 10px rgba(212, 175, 55, 0.1),
-              0 0 30px rgba(212, 175, 55, 0.4);
+    0 0 0 10px rgba(212, 175, 55, 0.1),
+    0 0 30px rgba(212, 175, 55, 0.4);
   transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
   cursor: pointer;
   animation: fadeInScale 1s ease-out 0.5s both, floatImage 6s ease-in-out infinite;
@@ -135,15 +224,22 @@ header .logo {
 }
 
 @keyframes floatImage {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .about-img img:hover {
   transform: translateY(-8px) scale(1.05) rotate(-2deg);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8),
-              0 0 0 10px rgba(212, 175, 55, 0.2),
-              0 0 50px rgba(212, 175, 55, 0.6);
+    0 0 0 10px rgba(212, 175, 55, 0.2),
+    0 0 50px rgba(212, 175, 55, 0.6);
   border-color: #e1c55a;
   animation-play-state: paused;
 }
@@ -199,7 +295,7 @@ header .logo {
   font-weight: bold;
   font-size: 1.35em;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5),
-              inset 0 0 20px rgba(212, 175, 55, 0.05);
+    inset 0 0 20px rgba(212, 175, 55, 0.05);
   border: 2px solid rgba(212, 175, 55, 0.3);
   transition: all 0.3s ease;
   cursor: pointer;
@@ -227,15 +323,20 @@ header .logo {
 }
 
 @keyframes borderRotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .stat-card:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.7),
-              0 0 30px rgba(212, 175, 55, 0.4),
-              inset 0 0 30px rgba(212, 175, 55, 0.1);
+    0 0 30px rgba(212, 175, 55, 0.4),
+    inset 0 0 30px rgba(212, 175, 55, 0.1);
   border-color: var(--color-accent);
 }
 
