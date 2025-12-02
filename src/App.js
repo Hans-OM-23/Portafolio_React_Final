@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, NavLink, useLocation } from 'react-router-dom'
+import { useState } from 'react'
 import Inicio from './pages/Inicio'
 import Contacto from './pages/Contacto'
 import SobreMi from './pages/SobreMi'
@@ -14,16 +15,26 @@ import '@fortawesome/fontawesome-free/css/all.min.css'
 
 function Header() {
   const location = useLocation()
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen)
+  }
+
+  const closeMenu = () => {
+    setMenuOpen(false)
+  }
 
   return (
     <header className="header">
       <div className="logo">Mi Portafolio</div>
       <nav>
-        <ul className="nav-links">
+        <ul className={`nav-links ${menuOpen ? 'show' : ''}`}>
           <li>
             <NavLink
               to="/"
               className={location.pathname === '/' ? 'active' : ''}
+              onClick={closeMenu}
             >
               Inicio
             </NavLink>
@@ -32,6 +43,7 @@ function Header() {
             <NavLink
               to="/sobre-mi"
               className={location.pathname === '/sobre-mi' ? 'active' : ''}
+              onClick={closeMenu}
             >
               Sobre mí
             </NavLink>
@@ -40,6 +52,7 @@ function Header() {
             <NavLink
               to="/proyectos"
               className={location.pathname === '/proyectos' ? 'active' : ''}
+              onClick={closeMenu}
             >
               Proyectos
             </NavLink>
@@ -48,6 +61,7 @@ function Header() {
             <NavLink
               to="/habilidades"
               className={location.pathname === '/habilidades' ? 'active' : ''}
+              onClick={closeMenu}
             >
               Habilidades
             </NavLink>
@@ -56,14 +70,15 @@ function Header() {
             <NavLink
               to="/contacto"
               className={location.pathname === '/contacto' ? 'active' : ''}
+              onClick={closeMenu}
             >
               Contacto
             </NavLink>
           </li>
         </ul>
       </nav>
-      <div className="menu-toggle" id="menu-toggle">
-        <i className="fas fa-bars"></i>
+      <div className="menu-toggle" id="menu-toggle" onClick={toggleMenu}>
+        <i className={`fas ${menuOpen ? 'fa-times' : 'fa-bars'}`}></i>
       </div>
     </header>
   )

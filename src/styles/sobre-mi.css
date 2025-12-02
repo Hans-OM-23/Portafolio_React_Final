@@ -198,6 +198,65 @@ header .logo {
   border-color: var(--color-accent);
 }
 
+/* Responsive breakpoints */
+@media (max-width: 900px) {
+  .about {
+    padding: 120px 5% 80px;
+  }
+
+  .about h2 {
+    font-size: 2.5em;
+  }
+
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .about-img img {
+    width: 280px;
+    height: 280px;
+  }
+
+  .about-content {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .about {
+    padding: 100px 5% 60px;
+  }
+
+  .about h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+
+  .about-img img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .about-content p {
+    font-size: 1.1em;
+  }
+
+  .about-content .list-group-item {
+    font-size: 1em;
+  }
+
+  .stat-card {
+    padding: 24px;
+    font-size: 1.15em;
+  }
+
+  .stats {
+    gap: 15px;
+  }
+}
+
 /* ----- FOOTER ----- */
 .footer {
   background: #140202;

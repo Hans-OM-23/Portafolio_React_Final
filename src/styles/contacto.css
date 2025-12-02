@@ -257,3 +257,68 @@ body {
     transform: translateY(0);
   }
 }
+
+/* Responsive breakpoints */
+@media (max-width: 900px) {
+  .contact {
+    padding: 120px 5% 80px;
+  }
+
+  .section-title {
+    font-size: 2.5em;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  .contact-info,
+  .contact-form {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact {
+    padding: 100px 5% 60px;
+  }
+
+  .section-title {
+    font-size: 2em;
+  }
+
+  .section-subtitle {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+  }
+
+  .contact-container {
+    gap: 25px;
+  }
+
+  .info-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .info-item p {
+    text-align: center;
+    font-size: 0.95em;
+  }
+
+  .contact-form {
+    padding: 20px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 14px;
+    font-size: 0.95em;
+  }
+
+  .contact-form button {
+    padding: 14px;
+    font-size: 1em;
+  }
+}
