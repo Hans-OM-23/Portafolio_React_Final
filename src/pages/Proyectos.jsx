@@ -61,6 +61,90 @@ export default function Proyectos() {
                             </div>
                         </div>
                     </div>
+
+                    <div className="col-md-6 col-lg-5">
+                        <div className="project-card fade-in card h-100">
+                            <img src="/img/proyecto3.png" className="card-img-top" alt="Proyecto 3" />
+                            <div className="project-info card-body">
+                                <h3 className="card-title">Proyecto 3</h3>
+                                <p className="card-text">Diseño simple con enfoque visual para una Jugueteria en React.</p>
+                                <div className="project-links d-flex gap-2">
+                                    <a
+                                        href="https://toysperu-jugueteria.vercel.app/"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="btn"
+                                    >
+                                        Demo
+                                    </a>
+                                    <a
+                                        href="https://github.com/Hans-OM-23/TOYSPERU_JUGUETERIA.git"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="btn"
+                                    >
+                                        Código
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col-md-6 col-lg-5">
+                        <div className="project-card fade-in card h-100">
+                            <img src="/img/proyecto4.png" className="card-img-top" alt="Proyecto 4" />
+                            <div className="project-info card-body">
+                                <h3 className="card-title">Proyecto 4</h3>
+                                <p className="card-text">Diseño simple con enfoque visual para una Panaderia, que es un proyecto creado en clase.</p>
+                                <div className="project-links d-flex gap-2">
+                                    <a
+                                        href="https://supabase-delicia-s15.vercel.app/"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="btn"
+                                    >
+                                        Demo
+                                    </a>
+                                    <a
+                                        href="https://github.com/yanpol14/supabase-delicia_S15.git"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="btn"
+                                    >
+                                        Código
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col-md-6 col-lg-5">
+                        <div className="project-card fade-in card h-100">
+                            <img src="/img/proyecto5.png" className="card-img-top" alt="Proyecto 5" />
+                            <div className="project-info card-body">
+                                <h3 className="card-title">Proyecto 5</h3>
+                                <p className="card-text">Diseño simple con enfoque visual para una plastiqueria comun   .</p>
+                                <div className="project-links d-flex gap-2">
+                                    <a
+                                        href="https://cosmetologia-yudit.vercel.app/index.html"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="btn"
+                                    >
+                                        Demo
+                                    </a>
+                                    <a
+                                        href="https://github.com/RickCrispin/HuancaPlastic.git"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="btn"
+                                    >
+                                        Código
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Cards de destacados */}
